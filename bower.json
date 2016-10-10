@@ -1,0 +1,17 @@
+{
+  "name": "dynamic-charts",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "Badaueba <alan.develop@outlook.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

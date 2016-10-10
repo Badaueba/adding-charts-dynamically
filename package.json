@@ -1,12 +1,12 @@
 {
   "name": "dynamic-charts",
   "version": "1.0.0",
-  "description": "",
+  "description": "Adding charts dynamically with fusioncharts and mean stack",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Alan G. Alves",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.2",

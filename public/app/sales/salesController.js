@@ -7,7 +7,8 @@ function salesController () {
     vm.salesCategoryList = false;
     vm.salesThemeList = true;
     vm.saleObject = {};
-
+    vm.feedbackRequest = "";
+    
     vm.submitSale = function () {
         console.log(vm.saleObject);
     };

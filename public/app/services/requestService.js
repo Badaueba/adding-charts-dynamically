@@ -1,6 +1,7 @@
 var requestService = angular.module('requestService', []);
 requestService.factory('Request', Request);
 function Request ($http) {
+    var base = "http://localhost:8000/"
     var requestFactory = {};
     requestFactory.get = function (endPoint) {
         return $http.get(base + endPoint);

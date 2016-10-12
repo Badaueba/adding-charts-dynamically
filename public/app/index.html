@@ -11,9 +11,12 @@
     <script src="libs/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
 
     <script src="app/main.js" charset="utf-8"></script>
-    <script src="app/main.routes.js" charset="utf-8"></script>
+    <script src="app/main.routes.js"></script>
+    <script src="app/mainController.js"></script>
     <script src="app/sales/salesController.js"></script>
     <script src="app/charts/chartsController.js"></script>
+    <script src="app/services/requestService.js"></script>
+
 </head>
 <body ng-app="dynamicCharts" ng-controller="mainController as main">
 
@@ -24,23 +27,26 @@
             </div>
             <div id="menu">
                 <ul class="nav navbar-nav">
+
+                    <!-- Charts -->
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <span class="glyphicon glyphicon-equalizer"></span> Charts
                             <b class="caret"></b>
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu" id="charts-menu-dropdown-ul">
                             <li><a ui-sref="charts_create-edit">Create new chart</a></li>
                         </ul>
                     </li>
 
+                    <!-- SALES -->
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <span class="glyphicon glyphicon-list-alt"> </span> Sales
                             <b class="caret"></b>
                         </a>
 
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu" id="sales-menu-dropdown-ul">
                             <li><a ui-sref="sales_create-edit">Create new Sale</a></li>
                         </ul>
                     </li>

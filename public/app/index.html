@@ -1,27 +1,55 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <base href="/" />
-        <title>Dynamic Charts</title>
-        <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
-        <script src="libs/angular/angular.js"></script>
-        <script src="libs/angular-ui-router/release/angular-ui-router.js" charset="utf-8"></script>
-        <script src="libs/jquery/dist/jquery.min.js"></script>
-        <script src="libs/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
+<head>
+    <meta charset="utf-8">
+    <base href="/" />
+    <title>Dynamic Charts</title>
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+    <script src="libs/angular/angular.js"></script>
+    <script src="libs/angular-ui-router/release/angular-ui-router.js" charset="utf-8"></script>
+    <script src="libs/jquery/dist/jquery.min.js"></script>
+    <script src="libs/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
 
-        <script src="app/main.js" charset="utf-8"></script>
-        <script src="app/main.routes.js" charset="utf-8"></script>
-        <script src="app/sales/salesController.js"></script>
-        <script src="app/charts/chartsController.js"></script>
-    </head>
-    <body ng-app="dynamicCharts">
-        
-        <a ui-sref="home">home</a> |
-        <a ui-sref="charts">charts</a> |
-        <a ui-sref="sales">sales</a>
+    <script src="app/main.js" charset="utf-8"></script>
+    <script src="app/main.routes.js" charset="utf-8"></script>
+    <script src="app/sales/salesController.js"></script>
+    <script src="app/charts/chartsController.js"></script>
+</head>
+<body ng-app="dynamicCharts">
 
-        <div ui-view></div>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="slide-nav">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" ui-sref="home">Home</a>
+            </div>
+            <div id="menu">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-equalizer"></span> Charts
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a ui-sref="charts_create-edit">Create new chart</a></li>
+                        </ul>
+                    </li>
 
-    </body>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-list-alt"> </span> Sales
+                            <b class="caret"></b>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a ui-sref="sales_create-edit">Create new Sale</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div ui-view></div>
+
+</body>
 </html>

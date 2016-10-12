@@ -17,6 +17,12 @@ angular.module("dynamicCharts")
             controller : 'salesController',
             controllerAs : 'sales'
         })
+        .state('sales_create-edit', {
+            url : '/sales/create-edit',
+            templateUrl : 'app/sales/sales_create-edit.html',
+            controller : 'salesController',
+            controllerAs : 'sales'
+        })
 
     $urlRouterProvider.otherwise('/home')
     $locationProvider.html5Mode(true);

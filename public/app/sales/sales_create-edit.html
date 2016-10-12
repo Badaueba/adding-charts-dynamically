@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="col-sm-6 col-sm-offset-3">
+        <h1>Create or edit sale</h1>
+
+        <form ng-submit="sales.submitSale()">
+            <!-- CATEGORY -->
+            <div class="form-group">
+                <label><h2>Sale category</h2></label>
+                <div class="radio">
+                    <label><input type="radio" ng-click="sales.checkCategoryList( 'false')" name="optradio">New</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" ng-click="sales.checkCategoryList('true')"name="optradio">One of the list</label>
+                </div>
+                <div ng-if="sales.salesCategoryList == 'true'">
+                    <label for="">Select a category:</label>
+                    <select  class="form-control" ng-model="sales.saleObject.category">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                </div>
+
+                <div ng-if="sales.salesCategoryList == 'false'">
+                    <label for="">New category name</label>
+                    <input class="form-control" type="text" name="name" value="" ng-model="sales.saleObject.category">
+                </div>
+            </div>
+
+            <!-- THEME -->
+            <div class="form-group">
+                <label><h2>Sale Theme</h2></label>
+                <div class="radio">
+                    <label><input type="radio" ng-click="sales.checkThemeList('false')" name="optradio">New Theme</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" ng-click="sales.checkThemeList('true')"name="optradio">One of the Themes</label>
+                </div>
+                <div ng-if="sales.salesThemeList == 'true'">
+                    <label for="">Select a Theme:</label>
+                    <select  class="form-control" ng-model="sales.saleObject.theme">
+                        <option>theme 1</option>
+                        <option>theme 2</option>
+                        <option>theme 3</option>
+                        <option>theme 4</option>
+                    </select>
+                </div>
+
+                <div ng-if="sales.salesThemeList == 'false'">
+                    <label for="">New Theme name</label>
+                    <input class="form-control" type="text" name="name" value="" ng-model="sales.saleObject.theme">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Price $</label>
+                <input type="text" class="form-control"name="name" value="" ng-model="sales.saleObject.price">
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg"name="button">Send Sale</button>
+        </form>
+    </div>
+
+
+</div>

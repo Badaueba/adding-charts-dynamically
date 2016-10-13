@@ -1,6 +1,7 @@
 var Sales = require('./salesModel');
 module.exports.add = addSale;
 module.exports.list = listSales;
+module.exports.group = groupSales;
 
 function addSale (req, res) {
     var newSale = new Sales(req.body);
@@ -16,7 +17,13 @@ function addSale (req, res) {
     });
 }
 function listSales (req, res) {
-    var query = Sales.find();
+    var criteria = {};
+    var sort = '';
+    if (req.query.category) criteria.category = req.query.category;
+    if (req.query.theme) criteria.theme = req.query.theme;
+    if (req.query.sort) sort = req.query.sort;
+    var query = Sales.find(criteria);
+    query.sort(sort);
     query.exec((err, sales) => {
         if (err) {
             console.log(err);
@@ -24,4 +31,25 @@ function listSales (req, res) {
         }
         res.json(sales);
     });
+}
+
+function groupSales (req, res) {
+    
+    var query = Sales.aggregate([
+
+        {
+            $group : {
+                _id : "$category",
+                total : {$sum : 1}
+            }
+        }
+    ]);
+
+    query.exec( (err, result) => {
+        if (err) {
+            console.log(err);
+            res.send(err.message);
+        }
+        res.json(result);
+    })
 }

@@ -21,7 +21,9 @@
 
             <div class="form-group" ng-if="sales.salesCategoryList == 'true'">
                 <label><h2>Select a category: </h2></label>
-                <select ng-options="field.id as field._id for field in sales.categoryOptions" ng-model="sales.categoryOptions[0].category"></select>
+                <select ng-model="sales.saleObject.category">
+                    <option ng-repeat='field in sales.categoryOptions' value="{{field._id}}">{{field._id}}</option>
+                </select>
             </div>
 
             <!-- THEME -->
@@ -41,7 +43,9 @@
             </div>
             <div class="form-group" ng-if="sales.salesThemeList == 'true'">
                 <label><h2>Select a theme: </h2></label>
-                <select ng-options="field.id as field._id for field in sales.themeOptions" ng-model="sales.saleObject.theme"></select>
+                <select ng-model="sales.saleObject.theme">
+                    <option ng-repeat='field in sales.themeOptions' value="{{field._id}}">{{field._id}}</option>
+                </select>
             </div>
 
             <div class="form-group">

@@ -12,14 +12,15 @@ function salesController (Request, $routeParams, $scope) {
     vm.categoryOptions = [];
     vm.themeOptions = [];
     vm.processing = false;
-    vm.selectedCategory = "asd";
+    vm.selectedCategory = "";
+    vm.selectedTheme = "";
 
     console.log(vm.selectedCategory);
-    
-    vm.submitSale = function () {
-        console.log(vm.saleObject);
+    console.log(vm.selectedTheme);
 
-        console.log(vm.selectedCategory);
+    vm.submitSale = function () {
+    
+        console.log(vm.saleObject);
 
         Request.post('sales-api', vm.saleObject)
             .then(function (response) {

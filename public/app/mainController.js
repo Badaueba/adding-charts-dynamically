@@ -5,7 +5,7 @@ mainCtrl.controller('mainController', mainController);
 function mainController (Request) {
     var vm = this;
 
-    Request.get("sales-api/group")
+    Request.get("sales-api/group?groupid=category")
         .then(function (response) {
             console.log(response.data);
             vm.createNewMenuItems(response.data);

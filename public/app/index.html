@@ -6,7 +6,7 @@
     <title>Dynamic Charts</title>
     <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
     <script src="libs/angular/angular.js"></script>
-    <script src="libs/angular-ui-router/release/angular-ui-router.js" charset="utf-8"></script>
+    <script src="libs/angular-route/angular-route.js"></script>
     <script src="libs/jquery/dist/jquery.min.js"></script>
     <script src="libs/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
 
@@ -23,7 +23,7 @@
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="slide-nav">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" ui-sref="home">Home</a>
+                <a class="navbar-brand" href="home">Home</a>
             </div>
             <div id="menu">
                 <ul class="nav navbar-nav">
@@ -34,8 +34,9 @@
                             <span class="glyphicon glyphicon-equalizer"></span> Charts
                             <b class="caret"></b>
                         </a>
+
                         <ul class="dropdown-menu" id="charts-menu-dropdown-ul">
-                            <li><a ui-sref="charts_create-edit">Create new chart</a></li>
+                            <li><a href="/charts_create-edit">Create new chart</a></li>
                         </ul>
                     </li>
 
@@ -47,13 +48,19 @@
                         </a>
 
                         <ul class="dropdown-menu" id="sales-menu-dropdown-ul">
-                            <li><a ui-sref="sales_create-edit">Create new Sale</a></li>
+                            <li class="dropdown-header">New</li>
+                            <li><a href="/sales-create-edit">Create new Sale</a></li>
+                            <li class="divider"></li>
                         </ul>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
+    <div class="jumbotron text-center">
+        <a href="sales({ cotegory : 'movies'})">Movies</a>
+    </div>
+
 
     <div ui-view></div>
 

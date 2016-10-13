@@ -1,1 +1,1 @@
-var main = angular.module("dynamicCharts", ['ui.router','mainCtrl', 'chartsCtrl', 'salesCtrl']);
+var main = angular.module("dynamicCharts", ['ngRoute','mainCtrl', 'chartsCtrl', 'salesCtrl']);

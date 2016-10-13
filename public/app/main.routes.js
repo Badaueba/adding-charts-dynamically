@@ -1,29 +1,26 @@
 angular.module("dynamicCharts")
-.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
-    $stateProvider
-        .state('home', {
+.config(function($routeProvider, $locationProvider) {
+    $routeProvider
+        .when('/home', {
             url : '/home',
             templateUrl : 'app/home/home.html'
         })
-        .state('charts', {
-            url : '/charts',
+        .when('/charts', {
             templateUrl : 'app/charts/charts.html',
             controller : 'chartsController',
             controllerAs : 'charts'
         })
-        .state('sales', {
-            url : '/sales',
+        .when('/sales/:category', {
             templateUrl : 'app/sales/sales.html',
             controller : 'salesController',
             controllerAs : 'sales'
         })
-        .state('sales_create-edit', {
-            url : '/sales/create-edit',
+        .when('/sales-create-edit', {
             templateUrl : 'app/sales/sales_create-edit.html',
             controller : 'salesController',
             controllerAs : 'sales'
-        })
+        });
 
-    $urlRouterProvider.otherwise('/home')
+    $routeProvider.otherwise({ redirecTo : '/home'})
     $locationProvider.html5Mode(true);
 });

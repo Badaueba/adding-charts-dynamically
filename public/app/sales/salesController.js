@@ -18,6 +18,16 @@ function salesController (Request) {
                 console.log(err);
             });
     };
+    vm.getSales = function () {
+        Request.get('sales-api/')
+            .then(function (response) {
+                console.log(response.data);
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+    }
+
     vm.checkCategoryList = function (check) {
         vm.salesCategoryList = check;
     };

@@ -34,12 +34,13 @@ function listSales (req, res) {
 }
 
 function groupSales (req, res) {
-    
+    var groupid = "$" + req.query.groupid;
+
     var query = Sales.aggregate([
 
         {
             $group : {
-                _id : "$category",
+                _id : groupid,
                 total : {$sum : 1}
             }
         }

@@ -10,19 +10,8 @@ function mainController (Request) {
         .then(function (response) {
             console.log(response.data);
             vm.categories = response.data;
-            //vm.createNewMenuItems(response.data);
         })
         .catch(function (err) {
             console.log(err);
         });
-
-    vm.createNewMenuItems = function (data) {
-        var salesMenuUL = angular.element(document.getElementById('sales-menu-dropdown-ul'));
-        data.forEach( function (object) {
-            var newElement = document.createElement("li");
-            newElement.innerHTML = "<a href='sales/" + object._id + "'>" + object._id + "</a>";
-            salesMenuUL.append(newElement)
-        });
-    }
-
 }

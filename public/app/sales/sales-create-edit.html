@@ -89,7 +89,12 @@
                 <button type="submit" class="btn btn-primary btn-lg"name="button">Send Sale</button>
             </div>
 
-            <div class="">
+            <div class="row show-hide-message text-center" ng-show="sales.feedbackRequest">
+                <div class="col-sm-6 col-sm-offset-2">
+                    <div class="alert alert-info">
+                        {{sales.feedbackRequest}}
+                    </div>
+                </div>
             </div>
 
 

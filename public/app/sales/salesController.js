@@ -26,10 +26,11 @@ function salesController (Request, $routeParams, $scope, $compile) {
 
         Request.post('sales-api', vm.saleObject)
             .then(function (response) {
-                console.log(response.data);
+                vm.feedbackRequest = response.data.message;
             })
             .catch(function (err){
                 console.log(err);
+                vm.feedbackRequest = err;
             });
     };
     vm.getSales = function () {

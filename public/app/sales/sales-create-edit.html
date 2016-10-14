@@ -58,14 +58,18 @@
                 <input type="text" class="form-control"name="name" value="" ng-model="sales.saleObject.price">
             </div>
 
+            <!-- OPTIONAL DYNAMIC form -->
             <div class="form-group" id="info-form">
                 <div class="form-group">
                     <div class="">
                         <p>{{sales.infoFormData}} </p>
                     </div>
 
-                    <label><h2>Add info / properties</h2></label>
-                    <button type="button" ng-click="sales.addNewFieldForm()"class="btn btn-primary">Add</button>
+                    <div class="form-group">
+                        <label><h2>Add info / properties</h2></label>
+                        <button type="button" ng-click="sales.addNewFieldForm()"class="btn btn-primary">Add</button>
+                    </div>
+
 
                     <div form-group ng-repeat="info in sales.infoFormData">
                         <ng-form>

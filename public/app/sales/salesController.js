@@ -14,13 +14,15 @@ function salesController (Request, $routeParams, $scope, $compile) {
     vm.processing = false;
     vm.selectedCategory = "";
     vm.selectedTheme = "";
-
-    console.log(vm.selectedCategory);
-    console.log(vm.selectedTheme);
+    vm.infoFormData = [];
 
     vm.submitSale = function () {
+        vm.saleObject.info = {};
+        vm.infoFormData.forEach(function (info) {
+            vm.saleObject.info[info.name] = info.value;
+        });
 
-        console.log(vm.saleObject);
+        console.log(vm.saleObject.info);
 
         Request.post('sales-api', vm.saleObject)
             .then(function (response) {
@@ -62,8 +64,6 @@ function salesController (Request, $routeParams, $scope, $compile) {
     vm.checkThemeList = function (check) {
         vm.salesThemeList = check;
     };
-
-    vm.infoFormData = [];
 
     vm.addNewFieldForm = function () {
         vm.infoFormData.push({ name : "", value : ""});

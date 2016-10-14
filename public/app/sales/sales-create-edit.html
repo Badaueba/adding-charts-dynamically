@@ -61,12 +61,22 @@
             <div class="form-group" id="info-form">
                 <div class="form-group">
                     <div class="">
-                        {{sales.testeInfo}}
-                        {{sales.infoFormData}}
+                        <p>{{sales.infoFormData}} </p>
                     </div>
 
                     <label><h2>Add info / properties</h2></label>
                     <button type="button" ng-click="sales.addNewFieldForm()"class="btn btn-primary">Add</button>
+
+                    <div form-group ng-repeat="info in sales.infoFormData">
+                        <ng-form>
+                            <label>Property name</label>
+                            <input type="text" placeholder="type a property name" ng-model="info.name" class="form-control" required>
+                            <label>Property Value</label>
+                            <input type="text" placeholder="type a property value" ng-model="info.value" class="form-control" required>
+                        </ng-form>
+                    </div>
+
+
                 </div>
 
             </div>

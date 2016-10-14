@@ -50,6 +50,10 @@
                             <li class="dropdown-header">New</li>
                             <li><a href="/sales-create-edit">Create new Sale</a></li>
                             <li class="divider"></li>
+                            <li ng-repeat="category in main.categories">
+                                <a href="/sales/{{category._id}}">{{category._id}}</a>
+                            </li>
+
                         </ul>
                     </li>
                 </ul>

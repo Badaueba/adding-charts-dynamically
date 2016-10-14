@@ -64,37 +64,9 @@ function salesController (Request, $routeParams, $scope, $compile) {
     };
 
     vm.infoFormData = [];
-    vm.infoFormIndex = 0;
-    vm.testeInfo = "teste";
+
     vm.addNewFieldForm = function () {
-
-        var infoForm = angular.element(document.getElementById('info-form'));
-        var formGroup = document.createElement("div");
-        formGroup.className = "form-group";
-
-        vm.infoFormData.push("");
-        console.log(vm.infoFormIndex);
-
-        var nameInput = document.createElement("input");
-        nameInput.type = "text";
-        nameInput.className = "form-control";
-        nameInput.placeholder = "Type the name of property";
-        nameInput.setAttribute("ng-model", "sales.testeInfo");
-
-        var valueInput = document.createElement("input");
-        valueInput.type = "text";
-        valueInput.className = "form-control";
-        valueInput.placeholder = "Type the value of property";
-        valueInput.setAttribute("ng-model", "sales.infoFormData[sales.infoFormIndex]");
-        
-        $compile(valueInput)($scope);
-        $compile(nameInput)($scope);
-
-        infoForm.append(nameInput);
-        infoForm.append(valueInput);
-        console.log(vm.infoFormData);
-        vm.infoFormIndex ++;
-
+        vm.infoFormData.push({ name : "", value : ""});
     };
     vm.getCategoryOptions();
     vm.getThemeOptions();

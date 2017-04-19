@@ -1,4 +1,4 @@
-#Visualize charts with a mean app.
+# Visualize charts with a mean app.
 
-###MongoDB, Express, AngularJs, Node and fusioncharts lib
+### MongoDB, Express, AngularJs, Node and fusioncharts lib
     
